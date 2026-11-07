@@ -1,0 +1,40 @@
+name: backend-ci
+on:
+  push:
+  pull_request:
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      # SQLite is only a quick unit-test substitute. Production/dev storage uses MySQL.
+      - run: DATABASE_URL=sqlite:///./ci.db CELERY_ALWAYS_EAGER=1 pytest -q tests
+  mysql-integration:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci_root_password
+          MYSQL_DATABASE: plan2sim_ci
+          MYSQL_USER: plan2sim
+          MYSQL_PASSWORD: ci_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysql --protocol=TCP -h 127.0.0.1 -uplan2sim -pci_password plan2sim_ci -e 'SELECT 1'"
+          --health-interval=10s --health-timeout=5s --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: pytest -q tests
+        env:
+          DATABASE_URL: mysql+pymysql://plan2sim:ci_password@127.0.0.1:3306/plan2sim_ci?charset=utf8mb4
+          CELERY_ALWAYS_EAGER: '1'
