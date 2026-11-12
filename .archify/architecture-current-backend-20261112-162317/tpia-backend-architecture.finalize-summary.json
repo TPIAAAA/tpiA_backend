@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-current-backend-20261112-162317\\candidate.json",
+    "sha256": "c9c47265ea5744d720047c4904b6337344ae4a846d424da50b01a35ef2fc5385",
+    "bytes": 6949
+  },
+  "artifact": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-current-backend-20261112-162317\\tpia-backend-architecture.html",
+    "sha256": "8e3e238b8805d9e0219ebbc515b73a5d4fadcfd10013cc14494175b358c5e9ce",
+    "bytes": 851739
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-current-backend-20261112-162317\\tpia-backend-architecture.finalize.json",
+    "summaryReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-current-backend-20261112-162317\\tpia-backend-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-current-backend-20261112-162317\\tpia-backend-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-12T08:25:39.672Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3723,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "routesOverSuggestedBends": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [],
+      "detours": [
+        {
+          "relationship": {
+            "id": "api-mysql",
+            "from": "api",
+            "to": "mysql",
+            "label": "CRUD／experiment 狀態",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "bends": 3,
+          "stretch": 1
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "api → mysql needs 3 bends: move node api or mysql so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "tpiA Backend 現況架構",
+    "locale": "zh-TW",
+    "output": ".archify/architecture-current-backend-20261112-162317/tpia-backend-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/TPIAAAA/tpiA_backend.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "7dca4b8ae32e9e63a72beb39534b286f95c0b0c5"
+    }
+  },
+  "components": [
+    {
+      "id": "clients",
+      "type": "external",
+      "label": "前端與 API 用戶端",
+      "sublabel": "獨立前端／curl／OpenAPI",
+      "pos": [40, 280],
+      "size": [150, 76],
+      "sources": [
+        { "path": "README.md", "line": 102, "end_line": 104, "label": "前端串接契約" }
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "cloud",
+      "label": "digiRunner Gateway",
+      "sublabel": "選用 REST Proxy／需手動註冊",
+      "tag": "optional profile",
+      "pos": [300, 60],
+      "size": [178, 80],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 59, "end_line": 66, "label": "選用 Gateway 服務" },
+        { "path": "README.md", "line": 62, "end_line": 68, "label": "手動 Proxy 設定" }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI API",
+      "sublabel": "版本化 REST／同步 demo／experiment API",
+      "tag": ":8000",
+      "pos": [300, 280],
+      "size": [178, 88],
+      "sources": [
+        { "path": "app/main.py", "line": 9, "end_line": 18, "label": "API 啟動與路由" },
+        { "path": "app/api/routes.py", "line": 19, "end_line": 60, "label": "同步與非同步端點" },
+        { "path": "app/api/routes.py", "line": 66, "end_line": 72, "label": "experiment 查詢" }
+      ]
+    },
+    {
+      "id": "redis",
+      "type": "messagebus",
+      "label": "Redis",
+      "sublabel": "Celery broker／result backend",
+      "pos": [560, 60],
+      "size": [166, 76],
+      "sources": [
+        { "path": "app/core/config.py", "line": 4, "end_line": 6, "label": "Celery Redis 設定" },
+        { "path": "docker-compose.yml", "line": 26, "end_line": 33, "label": "Redis 服務" },
+        { "path": "docker-compose.yml", "line": 37, "end_line": 40, "label": "broker 與 backend URL" }
+      ]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "Celery Worker",
+      "sublabel": "非同步 experiment 執行程序",
+      "pos": [846, 60],
+      "size": [178, 82],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 49, "end_line": 58, "label": "Worker 容器" },
+        { "path": "app/workers/celery_app.py", "line": 1, "end_line": 6, "label": "Celery 應用" },
+        { "path": "app/workers/tasks.py", "line": 7, "end_line": 24, "label": "任務與結果寫回" }
+      ]
+    },
+    {
+      "id": "simulation",
+      "type": "backend",
+      "label": "Simulation Core",
+      "sublabel": "WorldEngine＋EventSimIR／程序內模組",
+      "tag": "heapq DES",
+      "pos": [608, 280],
+      "size": [190, 88],
+      "sources": [
+        { "path": "app/simulation/engine.py", "line": 16, "end_line": 55, "label": "模擬主迴圈" },
+        { "path": "app/contracts/schemas.py", "line": 26, "end_line": 61, "label": "EventSimIR 驗證" },
+        { "path": "app/contracts/schemas.py", "line": 103, "end_line": 119, "label": "模擬結果契約" }
+      ]
+    },
+    {
+      "id": "mysql",
+      "type": "database",
+      "label": "MySQL 8.4",
+      "sublabel": "projects／experiments／結果與狀態",
+      "tag": "mysql_data volume",
+      "pos": [846, 480],
+      "size": [178, 84],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 3, "end_line": 25, "label": "MySQL 與持久卷" },
+        { "path": "app/db.py", "line": 20, "end_line": 38, "label": "資料模型與建表" },
+        { "path": "app/db.py", "line": 41, "end_line": 43, "label": "Session 提供者" }
+      ]
+    },
+    {
+      "id": "research",
+      "type": "external",
+      "label": "研究擴充模組",
+      "sublabel": "Agent／LLM／最佳化等尚未接入 demo",
+      "tag": "TODO / NotImplemented",
+      "pos": [560, 480],
+      "size": [198, 84],
+      "sources": [
+        { "path": "app/llm/adapter.py", "line": 9, "end_line": 13, "label": "LLM adapter TODO" },
+        { "path": "app/agents/population.py", "line": 4, "end_line": 7, "label": "群體模型 TODO" },
+        { "path": "app/optimization/optimizer.py", "line": 9, "end_line": 12, "label": "最佳化 TODO" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "tpiA_backend：Python 應用與 Docker Compose 服務",
+      "wraps": ["gateway", "api", "redis", "worker", "simulation", "mysql", "research"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-direct-api",
+      "from": "clients",
+      "to": "api",
+      "label": "REST /api/v1",
+      "variant": "emphasis"
+    },
+    {
+      "id": "client-gateway",
+      "from": "clients",
+      "to": "gateway",
+      "label": "選用代理入口",
+      "variant": "dashed"
+    },
+    {
+      "id": "gateway-api",
+      "from": "gateway",
+      "to": "api",
+      "label": "手動註冊 Proxy",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "api-sync-simulation",
+      "from": "api",
+      "to": "simulation",
+      "label": "同步 demo 執行",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-enqueue",
+      "from": "api",
+      "to": "redis",
+      "label": "排入 experiment",
+      "variant": "dashed"
+    },
+    {
+      "id": "redis-worker",
+      "from": "redis",
+      "to": "worker",
+      "label": "Celery 任務",
+      "variant": "dashed"
+    },
+    {
+      "id": "worker-simulation",
+      "from": "worker",
+      "to": "simulation",
+      "label": "非同步執行",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "api-mysql",
+      "from": "api",
+      "to": "mysql",
+      "label": "CRUD／experiment 狀態",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "worker-mysql",
+      "from": "worker",
+      "to": "mysql",
+      "label": "讀取任務／寫回結果",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "目前可執行路徑",
+      "items": [
+        "同步：API 直接呼叫 WorldEngine 回傳 demo 結果",
+        "非同步：API 建立 experiment，Celery Worker 執行後寫回 MySQL",
+        "前端只透過版本化 API，不直接連 MySQL 或 Redis"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "現況邊界",
+      "items": [
+        "這是教學起始框架，不是完整模擬產品",
+        "digiRunner 是選用且需手動註冊 Proxy",
+        "Agent、文件編譯、LLM、風險與最佳化尚未接入 demo runtime"
+      ]
+    }
+  ]
+}
