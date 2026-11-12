@@ -118,4 +118,4 @@ git commit -m "Initialize Plan2Sim backend with MySQL"
 # 然後在 GitHub 建立 plan2sim-backend，依 GitHub 提供的指令設定 origin 並 push
 ```
 
-**不要把 `.env`、本機資料庫或密碼加入 Git。** 資料庫 migration 與正式權限機制仍是後續開發任務。
+**不要把 `.env`、本機資料庫或密碼加入 Git。** 資料庫 migration 與正式權限機制仍是後續開發任務，
