@@ -16,7 +16,7 @@ docker compose up --build -d
 
 服務位置：FastAPI `http://localhost:8000/docs`、Health `http://localhost:8000/api/v1/health`、MySQL `127.0.0.1:3307`（從電腦連線；容器內是 `mysql:3306`）、Redis 只在 compose 內部網路。
 
-`.env` 的 MySQL 密碼是僅供本機使用的範例。部署之前請更換 root 與應用程式密碼。MySQL 密碼若包含 `@`、`#`、`/` 等 URL 特殊字元，需先對 DATABASE_URL 內密碼做 URL percent-encoding。若 MySQL volume 已初始化，**更改 `.env` 不會自動更改資料庫內既有帳號密碼**；須進行 SQL 變更或重建純測試資料庫。禁止將真實憑證提交 Git。
+`.env` 的 MySQL 密碼是僅供本機使用的範例。部署之前請更換 root 與應用程式密碼。MySQL 密碼若包含 `@`、`#`、`/` 等 URL 特殊字元，需先對 DATABASE_URL 內密碼做 URL percent-encoding。若 MySQL volume 已初始化，**更改 `.env` 不會自動更改資料庫內既有帳號密碼**；須進行 SQL 變更或重建純測試資料庫。禁止將真實憑證提交 Git>
 
 ### 直接測試 API
 
