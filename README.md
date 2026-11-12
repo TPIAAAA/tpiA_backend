@@ -76,6 +76,21 @@ DATABASE_URL='sqlite:///./test.db' CELERY_ALWAYS_EAGER=1 pytest -q tests
 
 SQLite 只用於快速單元測試，**不是正式／開發資料庫**。GitHub Actions 另設 `mysql-integration` job，以 MySQL 8.4 執行測試。`.github/workflows/ci.yml` 說明實際測試環境。
 
+若本機未安裝 Python，可在後端根目錄用 Docker 執行測試（macOS／Linux shell）：
+
+```bash
+# 暫存 SQLite 測試資料庫，容器退出後即移除
+docker compose run --rm --no-deps \
+  -v "$PWD/tests:/code/tests:ro" -v "$PWD/pytest.ini:/code/pytest.ini:ro" \
+  -e DATABASE_URL=sqlite:////tmp/plan2sim-test.db -e CELERY_ALWAYS_EAGER=1 \
+  api pytest -q tests
+
+# MySQL 整合測試：先啟動上述後端服務；會在本機開發資料庫新增測試紀錄
+docker compose run --rm --no-deps \
+  -v "$PWD/tests:/code/tests:ro" -v "$PWD/pytest.ini:/code/pytest.ini:ro" \
+  -e CELERY_ALWAYS_EAGER=1 api pytest -q tests
+```
+
 ## 5. Repository 內容
 
 ```text
