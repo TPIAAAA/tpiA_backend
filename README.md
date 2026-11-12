@@ -119,3 +119,5 @@ git commit -m "Initialize Plan2Sim backend with MySQL"
 ```
 
 **不要把 `.env`、本機資料庫或密碼加入 Git。** 資料庫 migration 與正式權限機制仍是後續開發任務。
+
+Hi
