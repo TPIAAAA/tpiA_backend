@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "ccc6995a-fcec-4cb8-ab1b-462bba00fc16",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\candidate.json",
+  "output": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.html",
+  "specification": {
+    "sha256": "e9fbb8851e36a067922f2b994d159896782df889d64cbcc9db3d46d3cb6c49e9",
+    "bytes": 11961
+  },
+  "artifact": {
+    "sha256": "d334d88794dbc500c38054f9d8821ac91cd2cbe5ffca03536e776bedb5097e91",
+    "bytes": 882016
+  }
+}

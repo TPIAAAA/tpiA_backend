@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "tpiA Backend Python 模組架構",
+    "locale": "zh-TW",
+    "output": ".archify/architecture-python-modules-20261112-180049/architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/TPIAAAA/tpiA_backend.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "90c44c442aa870f0e46d12f8c2d2230dc8a02a36"
+    }
+  },
+  "components": [
+    {
+      "id": "main",
+      "type": "backend",
+      "label": "app.main",
+      "sublabel": "FastAPI 建立／lifespan／CORS／router",
+      "pos": [40, 250],
+      "size": [180, 82],
+      "sources": [
+        { "path": "app/main.py", "line": 1, "end_line": 18, "label": "應用入口" }
+      ]
+    },
+    {
+      "id": "routes",
+      "type": "backend",
+      "label": "app.api.routes",
+      "sublabel": "REST endpoints／同步與非同步控制",
+      "pos": [260, 250],
+      "size": [196, 86],
+      "sources": [
+        { "path": "app/api/routes.py", "line": 1, "end_line": 12, "label": "依賴與 router" },
+        { "path": "app/api/routes.py", "line": 19, "end_line": 72, "label": "API handlers" }
+      ]
+    },
+    {
+      "id": "config",
+      "type": "external",
+      "label": "app.core.config",
+      "sublabel": "DB／Celery／CORS 環境設定",
+      "pos": [500, 60],
+      "size": [184, 78],
+      "sources": [
+        { "path": "app/core/config.py", "line": 1, "end_line": 7, "label": "環境變數" }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "app.db",
+      "sublabel": "SQLAlchemy engine／Project／Experiment",
+      "pos": [500, 250],
+      "size": [190, 86],
+      "sources": [
+        { "path": "app/db.py", "line": 4, "end_line": 13, "label": "Engine 與 Session" },
+        { "path": "app/db.py", "line": 20, "end_line": 43, "label": "Models 與 DB lifecycle" }
+      ]
+    },
+    {
+      "id": "contracts",
+      "type": "external",
+      "label": "app.contracts.schemas",
+      "sublabel": "EventSim-IR／Agent／Result／Experiment",
+      "tag": "共用 Pydantic 契約",
+      "pos": [720, 440],
+      "size": [208, 92],
+      "sources": [
+        { "path": "app/contracts/schemas.py", "line": 7, "end_line": 61, "label": "IR 與 validator" },
+        { "path": "app/contracts/schemas.py", "line": 64, "end_line": 100, "label": "Agent 契約" },
+        { "path": "app/contracts/schemas.py", "line": 103, "end_line": 136, "label": "Result 與 Experiment" }
+      ]
+    },
+    {
+      "id": "examples",
+      "type": "backend",
+      "label": "app.simulation.examples",
+      "sublabel": "內建校園活動 demo EventSim-IR",
+      "pos": [720, 60],
+      "size": [196, 78],
+      "sources": [
+        { "path": "app/simulation/examples.py", "line": 1, "end_line": 25, "label": "demo model" }
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "app.simulation.engine",
+      "sublabel": "heapq DES／依賴／容量／EventLog",
+      "pos": [720, 250],
+      "size": [202, 86],
+      "sources": [
+        { "path": "app/simulation/engine.py", "line": 1, "end_line": 17, "label": "Scheduler 與 WorldEngine" },
+        { "path": "app/simulation/engine.py", "line": 18, "end_line": 55, "label": "run 主迴圈" },
+        { "path": "app/simulation/engine.py", "line": 57, "end_line": 81, "label": "排程與資源規則" }
+      ]
+    },
+    {
+      "id": "celery",
+      "type": "messagebus",
+      "label": "app.workers.celery_app",
+      "sublabel": "Celery broker／backend／eager 設定",
+      "pos": [950, 60],
+      "size": [198, 78],
+      "sources": [
+        { "path": "app/workers/celery_app.py", "line": 1, "end_line": 6, "label": "Celery app" }
+      ]
+    },
+    {
+      "id": "tasks",
+      "type": "backend",
+      "label": "app.workers.tasks",
+      "sublabel": "run_experiment／狀態與結果寫回",
+      "pos": [950, 250],
+      "size": [198, 86],
+      "sources": [
+        { "path": "app/workers/tasks.py", "line": 1, "end_line": 8, "label": "任務依賴與註冊" },
+        { "path": "app/workers/tasks.py", "line": 9, "end_line": 24, "label": "非同步執行流程" }
+      ]
+    },
+    {
+      "id": "agents",
+      "type": "backend",
+      "label": "app.agents",
+      "sublabel": "AgentPolicy／NoOp／Population／Policies",
+      "tag": "部分 TODO",
+      "pos": [40, 690],
+      "size": [202, 88],
+      "sources": [
+        { "path": "app/agents/base.py", "line": 1, "end_line": 15, "label": "Policy 與 NoOp" },
+        { "path": "app/agents/population.py", "line": 1, "end_line": 7, "label": "Population TODO" },
+        { "path": "app/agents/student_participant_policy.py", "line": 1, "end_line": 10, "label": "Participant TODO" }
+      ]
+    },
+    {
+      "id": "validator",
+      "type": "backend",
+      "label": "action_validator",
+      "sublabel": "Agent ID gate／進階規則未接入",
+      "tag": "未進入 demo path",
+      "pos": [270, 690],
+      "size": [188, 88],
+      "sources": [
+        { "path": "app/simulation/action_validator.py", "line": 1, "end_line": 10, "label": "Action validator" }
+      ]
+    },
+    {
+      "id": "doccompiler",
+      "type": "backend",
+      "label": "documents＋compiler",
+      "sublabel": "EvidenceSpan／ExtractedFact／IR compiler",
+      "tag": "NotImplemented",
+      "pos": [470, 690],
+      "size": [202, 88],
+      "sources": [
+        { "path": "app/documents/parser.py", "line": 1, "end_line": 20, "label": "Document parser TODO" },
+        { "path": "app/compiler/compiler.py", "line": 1, "end_line": 8, "label": "IR compiler TODO" }
+      ]
+    },
+    {
+      "id": "llm",
+      "type": "backend",
+      "label": "app.llm.adapter",
+      "sublabel": "StructuredLLM Protocol／provider 未接",
+      "tag": "NotImplemented",
+      "pos": [690, 690],
+      "size": [196, 88],
+      "sources": [
+        { "path": "app/llm/adapter.py", "line": 1, "end_line": 13, "label": "LLM adapter TODO" }
+      ]
+    },
+    {
+      "id": "analysis",
+      "type": "backend",
+      "label": "experiments／risks／optimization",
+      "sublabel": "Scenario／RiskFinding／ImprovementProposal",
+      "tag": "NotImplemented",
+      "pos": [900, 690],
+      "size": [224, 88],
+      "sources": [
+        { "path": "app/experiments/scenarios.py", "line": 1, "end_line": 14, "label": "Scenario TODO" },
+        { "path": "app/risks/analyzer.py", "line": 1, "end_line": 14, "label": "Risk TODO" },
+        { "path": "app/optimization/optimizer.py", "line": 1, "end_line": 12, "label": "Optimization TODO" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "目前 API／同步／非同步執行路徑",
+      "wraps": ["main", "routes", "config", "db", "contracts", "examples", "engine", "celery", "tasks"]
+    },
+    {
+      "kind": "region",
+      "label": "研究擴充 packages（目前未由 main／routes／tasks 呼叫）",
+      "wraps": ["agents", "validator", "doccompiler", "llm", "analysis"]
+    }
+  ],
+  "connections": [
+    { "id": "main-routes", "from": "main", "to": "routes", "label": "include_router", "variant": "emphasis" },
+    { "id": "main-config", "from": "main", "to": "config", "label": "CORS_ORIGINS" },
+    { "id": "main-db", "from": "main", "to": "db", "label": "lifespan init_db" },
+    { "id": "routes-db", "from": "routes", "to": "db", "label": "Session／CRUD" },
+    { "id": "routes-contracts", "from": "routes", "to": "contracts", "label": "request／response models" },
+    { "id": "routes-examples", "from": "routes", "to": "examples", "label": "demo_model" },
+    { "id": "routes-engine", "from": "routes", "to": "engine", "label": "同步 WorldEngine.run", "variant": "emphasis" },
+    { "id": "routes-tasks", "from": "routes", "to": "tasks", "label": "run_experiment.delay", "variant": "dashed" },
+    { "id": "db-config", "from": "db", "to": "config", "label": "DATABASE_URL" },
+    { "id": "examples-contracts", "from": "examples", "to": "contracts", "label": "EventSimIR.validate" },
+    { "id": "engine-contracts", "from": "engine", "to": "contracts", "label": "IR／EventLog／Result" },
+    { "id": "celery-config", "from": "celery", "to": "config", "label": "broker／backend settings" },
+    { "id": "tasks-celery", "from": "tasks", "to": "celery", "label": "task registration" },
+    { "id": "tasks-db", "from": "tasks", "to": "db", "label": "read／write Experiment" },
+    { "id": "tasks-contracts", "from": "tasks", "to": "contracts", "label": "validate model／dump result" },
+    { "id": "tasks-engine", "from": "tasks", "to": "engine", "label": "非同步 WorldEngine.run", "variant": "emphasis", "labelDx": -12 },
+    { "id": "agents-contracts", "from": "agents", "to": "contracts", "label": "Agent contracts" },
+    { "id": "validator-contracts", "from": "validator", "to": "contracts", "label": "ActionProposal／State" },
+    { "id": "doccompiler-contracts", "from": "doccompiler", "to": "contracts", "label": "compile to EventSimIR" },
+    { "id": "analysis-contracts", "from": "analysis", "to": "contracts", "label": "RiskAnalyzer uses Result" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "實際載入的主路徑",
+      "items": [
+        "app.main → routes → DB／demo engine／Celery task",
+        "Worker task 重用 DB、EventSimIR 與 WorldEngine",
+        "API 與 Worker 共享同一組契約與模擬核心"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "圖的抽象層級",
+      "items": [
+        "空白 __init__.py 省略",
+        "同一研究 package 的小型 TODO 檔按責任合併",
+        "LLM adapter 尚無 app.* import，也未被 runtime 呼叫"
+      ]
+    }
+  ]
+}

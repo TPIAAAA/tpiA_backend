@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\candidate.json",
+    "sha256": "e9fbb8851e36a067922f2b994d159896782df889d64cbcc9db3d46d3cb6c49e9",
+    "bytes": 11961
+  },
+  "artifact": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.html",
+    "sha256": "d334d88794dbc500c38054f9d8821ac91cd2cbe5ffca03536e776bedb5097e91",
+    "bytes": 882016
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\review-2\\architecture.finalize.json",
+    "summaryReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\review-2\\architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\review-2\\architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-12T08:25:39.672Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3231,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 4,
+      "routesOverSuggestedBends": 3
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "routes-engine",
+            "from": "routes",
+            "to": "engine",
+            "label": "同步 demo run",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "right": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "point": [
+            777,
+            335.95
+          ]
+        },
+        {
+          "left": {
+            "id": "engine-contracts",
+            "from": "engine",
+            "to": "contracts",
+            "label": "consume IR／emit Result",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "right": {
+            "id": "routes-persistence",
+            "from": "routes",
+            "to": "persistence",
+            "label": "Project／Experiment CRUD",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "point": [
+            875,
+            432
+          ]
+        },
+        {
+          "left": {
+            "id": "routes-persistence",
+            "from": "routes",
+            "to": "persistence",
+            "label": "Project／Experiment CRUD",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "right": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "point": [
+            777,
+            432
+          ]
+        },
+        {
+          "left": {
+            "id": "analysis-contracts",
+            "from": "analysis",
+            "to": "contracts",
+            "label": "Risk uses SimulationResult",
+            "collectionIndex": 18,
+            "artifactIndex": 19
+          },
+          "right": {
+            "id": "ci-mysql",
+            "from": "ci",
+            "to": "mysql",
+            "label": "MySQL 8.4 integration",
+            "collectionIndex": 20,
+            "artifactIndex": 21
+          },
+          "point": [
+            742,
+            1230
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "client-api",
+            "from": "clients",
+            "to": "api",
+            "label": "直接 REST /api/v1",
+            "collectionIndex": 0,
+            "artifactIndex": 1
+          },
+          "bends": 3,
+          "stretch": 1.3
+        },
+        {
+          "relationship": {
+            "id": "demo-contracts",
+            "from": "demo",
+            "to": "contracts",
+            "label": "EventSimIR.validate",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "bends": 3,
+          "stretch": 1.234
+        },
+        {
+          "relationship": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "bends": 4,
+          "stretch": 1
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "routes → engine crosses worker → contracts: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "engine → contracts crosses routes → persistence: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "routes → persistence crosses worker → contracts: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "analysis → contracts crosses ci → mysql: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "clients → api needs 3 bends: move node clients or api so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "demo → contracts needs 3 bends: move node demo or contracts so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "worker → contracts needs 4 bends: move node worker or contracts so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

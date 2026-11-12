@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-12T10:11:08.554Z",
+  "specification": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+    "sha256": "1b47b18a17709b16a96d06f7d0dd56a65bc921abcc95aaee7260f899d8e8e179",
+    "bytes": 9727
+  },
+  "artifact": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+    "sha256": "4b78d175f9acc27306bc621d3e2bc56d996785fcdb17530ae34bb879e44a84c4",
+    "bytes": 876221
+  },
+  "stages": {
+    "validate": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": null,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\GitHub\\tpiA_backend\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\GitHub\\tpiA_backend",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "deliver",
+        "receiptId": "d9174c55-3dae-4151-840a-07b02ff5a4ed",
+        "stage": "render",
+        "type": "architecture",
+        "input": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+        "output": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "error": "Architecture layout validation failed:\n- Label \"read／write Experiment\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [756, 512] or set labelDy -19 (above)\n- Label \"read／write Experiment\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [756, 638] or set labelDy 107 (below); or set labelAt [756, 512] or set labelDy -19 (above)\n- Label \"validate model／dump result\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [754, 512] or set labelDy -57 (above)\n- Label \"validate model／dump result\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [754, 638] or set labelDy 69 (below); or set labelAt [754, 512] or set labelDy -57 (above)\n- [composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[8] id \"db-config\" \"db\" -> \"config\" label \"DATABASE_URL\" segment 2 [485, 496] -> [485, 182] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.\n- [composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[9] id \"examples-contracts\" \"examples\" -> \"contracts\" label \"EventSimIR.validate\" segment 2 [514, 297] -> [514, 496] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.\n- [composition/label-route-clearance] showcase architecture label \"read／write Experiment\" on connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" is 0px from connections[15] id \"tasks-engine\" \"tasks\" -> \"engine\" label \"非同步 WorldEngine.run\" segment 1 [751, 550] -> [751, 343] (label rect [698, 522, 116, 14]; minimum 4px) — if the authored labelDx are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.\n- [composition/label-route-clearance] showcase architecture label \"validate model／dump result\" on connections[14] id \"tasks-contracts\" \"tasks\" -> \"contracts\" label \"validate model／dump result\" is 0px from connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" segment 1 [756, 579] -> [756, 504] (label rect [684, 560, 140, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+        "diagnostics": [
+          {
+            "code": "composition/label-route-clearance",
+            "severity": "error",
+            "message": "[composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[8] id \"db-config\" \"db\" -> \"config\" label \"DATABASE_URL\" segment 2 [485, 496] -> [485, 182] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 4,
+              "id": "routes-contracts",
+              "from": "routes",
+              "to": "contracts"
+            },
+            "evidence": {
+              "label": "request／response models",
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 8,
+                "id": "db-config",
+                "from": "db",
+                "to": "config"
+              },
+              "segmentIndex": 2,
+              "clearancePx": 0,
+              "minimumPx": 4,
+              "labelRect": {
+                "relation": {
+                  "id": "routes-contracts",
+                  "from": "routes",
+                  "to": "contracts",
+                  "label": "request／response models"
+                },
+                "relationIndex": 4,
+                "label": "request／response models",
+                "x": 433.4,
+                "y": 442.5,
+                "width": 125.19999999999999,
+                "height": 14,
+                "lx": 496,
+                "ly": 452.5
+              },
+              "from": [
+                485,
+                496
+              ],
+              "to": [
+                485,
+                182
+              ]
+            },
+            "supportedFixes": [
+              "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+            ]
+          },
+          {
+            "code": "composition/label-route-clearance",
+            "severity": "error",
+            "message": "[composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[9] id \"examples-contracts\" \"examples\" -> \"contracts\" label \"EventSimIR.validate\" segment 2 [514, 297] -> [514, 496] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 4,
+              "id": "routes-contracts",
+              "from": "routes",
+              "to": "contracts"
+            },
+            "evidence": {
+              "label": "request／response models",
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 9,
+                "id": "examples-contracts",
+                "from": "examples",
+                "to": "contracts"
+              },
+              "segmentIndex": 2,
+              "clearancePx": 0,
+              "minimumPx": 4,
+              "labelRect": {
+                "relation": {
+                  "id": "routes-contracts",
+                  "from": "routes",
+                  "to": "contracts",
+                  "label": "request／response models"
+                },
+                "relationIndex": 4,
+                "label": "request／response models",
+                "x": 433.4,
+                "y": 442.5,
+                "width": 125.19999999999999,
+                "height": 14,
+                "lx": 496,
+                "ly": 452.5
+              },
+              "from": [
+                514,
+                297
+              ],
+              "to": [
+                514,
+                496
+              ]
+            },
+            "supportedFixes": [
+              "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+            ]
+          },
+          {
+            "code": "composition/label-route-clearance",
+            "severity": "error",
+            "message": "[composition/label-route-clearance] showcase architecture label \"read／write Experiment\" on connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" is 0px from connections[15] id \"tasks-engine\" \"tasks\" -> \"engine\" label \"非同步 WorldEngine.run\" segment 1 [751, 550] -> [751, 343] (label rect [698, 522, 116, 14]; minimum 4px) — if the authored labelDx are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 13,
+              "id": "tasks-db",
+              "from": "tasks",
+              "to": "db"
+            },
+            "evidence": {
+              "label": "read／write Experiment",
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 15,
+                "id": "tasks-engine",
+                "from": "tasks",
+                "to": "engine"
+              },
+              "segmentIndex": 1,
+              "clearancePx": 0,
+              "minimumPx": 4,
+              "labelRect": {
+                "relation": {
+                  "id": "tasks-db",
+                  "from": "tasks",
+                  "to": "db",
+                  "label": "read／write Experiment"
+                },
+                "relationIndex": 13,
+                "label": "read／write Experiment",
+                "x": 698.2,
+                "y": 521.5,
+                "width": 115.6,
+                "height": 14,
+                "lx": 756,
+                "ly": 531.5
+              },
+              "from": [
+                751,
+                549.95
+              ],
+              "to": [
+                751,
+                343
+              ]
+            },
+            "supportedFixes": [
+              "if the authored labelDx are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+            ]
+          },
+          {
+            "code": "composition/label-route-clearance",
+            "severity": "error",
+            "message": "[composition/label-route-clearance] showcase architecture label \"validate model／dump result\" on connections[14] id \"tasks-contracts\" \"tasks\" -> \"contracts\" label \"validate model／dump result\" is 0px from connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" segment 1 [756, 579] -> [756, 504] (label rect [684, 560, 140, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 14,
+              "id": "tasks-contracts",
+              "from": "tasks",
+              "to": "contracts"
+            },
+            "evidence": {
+              "label": "validate model／dump result",
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 13,
+                "id": "tasks-db",
+                "from": "tasks",
+                "to": "db"
+              },
+              "segmentIndex": 1,
+              "clearancePx": 0,
+              "minimumPx": 4,
+              "labelRect": {
+                "relation": {
+                  "id": "tasks-contracts",
+                  "from": "tasks",
+                  "to": "contracts",
+                  "label": "validate model／dump result"
+                },
+                "relationIndex": 14,
+                "label": "validate model／dump result",
+                "x": 684.2,
+                "y": 559.5,
+                "width": 139.6,
+                "height": 14,
+                "lx": 754,
+                "ly": 569.5
+              },
+              "from": [
+                756,
+                579
+              ],
+              "to": [
+                756,
+                504
+              ]
+            },
+            "supportedFixes": [
+              "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+            ]
+          },
+          {
+            "code": "layout/constraint",
+            "severity": "error",
+            "message": "Label \"read／write Experiment\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [756, 512] or set labelDy -19 (above)",
+            "subject": {
+              "diagramType": "architecture"
+            },
+            "evidence": {},
+            "supportedFixes": []
+          },
+          {
+            "code": "layout/constraint",
+            "severity": "error",
+            "message": "Label \"read／write Experiment\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [756, 638] or set labelDy 107 (below); or set labelAt [756, 512] or set labelDy -19 (above)",
+            "subject": {
+              "diagramType": "architecture"
+            },
+            "evidence": {},
+            "supportedFixes": []
+          },
+          {
+            "code": "layout/constraint",
+            "severity": "error",
+            "message": "Label \"validate model／dump result\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [754, 512] or set labelDy -57 (above)",
+            "subject": {
+              "diagramType": "architecture"
+            },
+            "evidence": {},
+            "supportedFixes": []
+          },
+          {
+            "code": "layout/constraint",
+            "severity": "error",
+            "message": "Label \"validate model／dump result\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [754, 638] or set labelDy 69 (below); or set labelAt [754, 512] or set labelDy -57 (above)",
+            "subject": {
+              "diagramType": "architecture"
+            },
+            "evidence": {},
+            "supportedFixes": []
+          }
+        ],
+        "provenance": "failed",
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      },
+      "execution": "embedded-in-deliver"
+    },
+    "deliver": {
+      "status": "not-run",
+      "execution": "blocked-by-validate"
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "composition/label-route-clearance",
+      "severity": "error",
+      "message": "[composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[8] id \"db-config\" \"db\" -> \"config\" label \"DATABASE_URL\" segment 2 [485, 496] -> [485, 182] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 4,
+        "id": "routes-contracts",
+        "from": "routes",
+        "to": "contracts"
+      },
+      "evidence": {
+        "label": "request／response models",
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 8,
+          "id": "db-config",
+          "from": "db",
+          "to": "config"
+        },
+        "segmentIndex": 2,
+        "clearancePx": 0,
+        "minimumPx": 4,
+        "labelRect": {
+          "relation": {
+            "id": "routes-contracts",
+            "from": "routes",
+            "to": "contracts",
+            "label": "request／response models"
+          },
+          "relationIndex": 4,
+          "label": "request／response models",
+          "x": 433.4,
+          "y": 442.5,
+          "width": 125.19999999999999,
+          "height": 14,
+          "lx": 496,
+          "ly": 452.5
+        },
+        "from": [
+          485,
+          496
+        ],
+        "to": [
+          485,
+          182
+        ]
+      },
+      "supportedFixes": [
+        "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+      ]
+    },
+    {
+      "code": "composition/label-route-clearance",
+      "severity": "error",
+      "message": "[composition/label-route-clearance] showcase architecture label \"request／response models\" on connections[4] id \"routes-contracts\" \"routes\" -> \"contracts\" label \"request／response models\" is 0px from connections[9] id \"examples-contracts\" \"examples\" -> \"contracts\" label \"EventSimIR.validate\" segment 2 [514, 297] -> [514, 496] (label rect [433, 443, 125, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 4,
+        "id": "routes-contracts",
+        "from": "routes",
+        "to": "contracts"
+      },
+      "evidence": {
+        "label": "request／response models",
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 9,
+          "id": "examples-contracts",
+          "from": "examples",
+          "to": "contracts"
+        },
+        "segmentIndex": 2,
+        "clearancePx": 0,
+        "minimumPx": 4,
+        "labelRect": {
+          "relation": {
+            "id": "routes-contracts",
+            "from": "routes",
+            "to": "contracts",
+            "label": "request／response models"
+          },
+          "relationIndex": 4,
+          "label": "request／response models",
+          "x": 433.4,
+          "y": 442.5,
+          "width": 125.19999999999999,
+          "height": 14,
+          "lx": 496,
+          "ly": 452.5
+        },
+        "from": [
+          514,
+          297
+        ],
+        "to": [
+          514,
+          496
+        ]
+      },
+      "supportedFixes": [
+        "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+      ]
+    },
+    {
+      "code": "composition/label-route-clearance",
+      "severity": "error",
+      "message": "[composition/label-route-clearance] showcase architecture label \"read／write Experiment\" on connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" is 0px from connections[15] id \"tasks-engine\" \"tasks\" -> \"engine\" label \"非同步 WorldEngine.run\" segment 1 [751, 550] -> [751, 343] (label rect [698, 522, 116, 14]; minimum 4px) — if the authored labelDx are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 13,
+        "id": "tasks-db",
+        "from": "tasks",
+        "to": "db"
+      },
+      "evidence": {
+        "label": "read／write Experiment",
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 15,
+          "id": "tasks-engine",
+          "from": "tasks",
+          "to": "engine"
+        },
+        "segmentIndex": 1,
+        "clearancePx": 0,
+        "minimumPx": 4,
+        "labelRect": {
+          "relation": {
+            "id": "tasks-db",
+            "from": "tasks",
+            "to": "db",
+            "label": "read／write Experiment"
+          },
+          "relationIndex": 13,
+          "label": "read／write Experiment",
+          "x": 698.2,
+          "y": 521.5,
+          "width": 115.6,
+          "height": 14,
+          "lx": 756,
+          "ly": 531.5
+        },
+        "from": [
+          751,
+          549.95
+        ],
+        "to": [
+          751,
+          343
+        ]
+      },
+      "supportedFixes": [
+        "if the authored labelDx are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+      ]
+    },
+    {
+      "code": "composition/label-route-clearance",
+      "severity": "error",
+      "message": "[composition/label-route-clearance] showcase architecture label \"validate model／dump result\" on connections[14] id \"tasks-contracts\" \"tasks\" -> \"contracts\" label \"validate model／dump result\" is 0px from connections[13] id \"tasks-db\" \"tasks\" -> \"db\" label \"read／write Experiment\" segment 1 [756, 579] -> [756, 504] (label rect [684, 560, 140, 14]; minimum 4px) — adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 14,
+        "id": "tasks-contracts",
+        "from": "tasks",
+        "to": "contracts"
+      },
+      "evidence": {
+        "label": "validate model／dump result",
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 13,
+          "id": "tasks-db",
+          "from": "tasks",
+          "to": "db"
+        },
+        "segmentIndex": 1,
+        "clearancePx": 0,
+        "minimumPx": 4,
+        "labelRect": {
+          "relation": {
+            "id": "tasks-contracts",
+            "from": "tasks",
+            "to": "contracts",
+            "label": "validate model／dump result"
+          },
+          "relationIndex": 14,
+          "label": "validate model／dump result",
+          "x": 684.2,
+          "y": 559.5,
+          "width": 139.6,
+          "height": 14,
+          "lx": 754,
+          "ly": 569.5
+        },
+        "from": [
+          756,
+          579
+        ],
+        "to": [
+          756,
+          504
+        ]
+      },
+      "supportedFixes": [
+        "adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+      ]
+    },
+    {
+      "code": "layout/constraint",
+      "severity": "error",
+      "message": "Label \"read／write Experiment\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [756, 512] or set labelDy -19 (above)",
+      "subject": {
+        "diagramType": "architecture"
+      },
+      "evidence": {},
+      "supportedFixes": []
+    },
+    {
+      "code": "layout/constraint",
+      "severity": "error",
+      "message": "Label \"read／write Experiment\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [698, 522, 116, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [756, 638] or set labelDy 107 (below); or set labelAt [756, 512] or set labelDy -19 (above)",
+      "subject": {
+        "diagramType": "architecture"
+      },
+      "evidence": {},
+      "supportedFixes": []
+    },
+    {
+      "code": "layout/constraint",
+      "severity": "error",
+      "message": "Label \"validate model／dump result\" overlaps component \"contracts\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"contracts\" rect: [520, 520, 208, 92]\n  Suggested fix: set labelAt [754, 512] or set labelDy -57 (above)",
+      "subject": {
+        "diagramType": "architecture"
+      },
+      "evidence": {},
+      "supportedFixes": []
+    },
+    {
+      "code": "layout/constraint",
+      "severity": "error",
+      "message": "Label \"validate model／dump result\" overlaps component \"tasks\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [684, 560, 140, 14]\n  component \"tasks\" rect: [780, 520, 198, 104]\n  Suggested fix: set labelAt [754, 638] or set labelDy 69 (below); or set labelAt [754, 512] or set labelDy -57 (above)",
+      "subject": {
+        "diagramType": "architecture"
+      },
+      "evidence": {},
+      "supportedFixes": []
+    }
+  ],
+  "evidence": {
+    "receipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\review-2\\architecture.finalize.json",
+    "summaryReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\review-2\\architecture.finalize-summary.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "validate",
+  "finishedAt": "2026-11-12T10:11:09.304Z",
+  "durationMs": 750,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-12T08:25:39.672Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

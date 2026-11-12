@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\candidate.json",
+    "sha256": "8f91b18276cf3c2258ffecb5e62cb1bf10da5bf50eb72b96aa9c40f668d072f1",
+    "bytes": 11961
+  },
+  "artifact": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.html",
+    "sha256": "2f9ca10853f95f4d3cf5f63c262e2e64e72c3c909022cd31244b0f2f83c36277",
+    "bytes": 882293
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.finalize.json",
+    "summaryReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-detailed-system-20261112-180049\\architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-12T08:25:39.672Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3169,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 6,
+      "routesOverSuggestedBends": 5,
+      "routesOverSuggestedStretch": 2
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "api-routes",
+            "from": "api",
+            "to": "routes",
+            "label": "dispatch /api/v1",
+            "collectionIndex": 3,
+            "artifactIndex": 4
+          },
+          "right": {
+            "id": "worker-persistence",
+            "from": "worker",
+            "to": "persistence",
+            "label": "讀取與寫回 Experiment",
+            "collectionIndex": 15,
+            "artifactIndex": 16
+          },
+          "point": [
+            478,
+            412
+          ]
+        },
+        {
+          "left": {
+            "id": "routes-demo",
+            "from": "routes",
+            "to": "demo",
+            "label": "demo_model",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "right": {
+            "id": "routes-persistence",
+            "from": "routes",
+            "to": "persistence",
+            "label": "Project／Experiment CRUD",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "point": [
+            588,
+            497
+          ],
+          "sharedNode": "routes"
+        },
+        {
+          "left": {
+            "id": "engine-contracts",
+            "from": "engine",
+            "to": "contracts",
+            "label": "consume IR／emit Result",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "right": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "point": [
+            889,
+            476
+          ],
+          "sharedNode": "contracts"
+        },
+        {
+          "left": {
+            "id": "routes-redis",
+            "from": "routes",
+            "to": "redis",
+            "label": "run_experiment.delay",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "right": {
+            "id": "worker-persistence",
+            "from": "worker",
+            "to": "persistence",
+            "label": "讀取與寫回 Experiment",
+            "collectionIndex": 15,
+            "artifactIndex": 16
+          },
+          "point": [
+            595,
+            212
+          ]
+        },
+        {
+          "left": {
+            "id": "worker-engine",
+            "from": "worker",
+            "to": "engine",
+            "label": "非同步 run",
+            "collectionIndex": 13,
+            "artifactIndex": 14
+          },
+          "right": {
+            "id": "worker-persistence",
+            "from": "worker",
+            "to": "persistence",
+            "label": "讀取與寫回 Experiment",
+            "collectionIndex": 15,
+            "artifactIndex": 16
+          },
+          "point": [
+            865,
+            212
+          ],
+          "sharedNode": "worker"
+        },
+        {
+          "left": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "right": {
+            "id": "worker-persistence",
+            "from": "worker",
+            "to": "persistence",
+            "label": "讀取與寫回 Experiment",
+            "collectionIndex": 15,
+            "artifactIndex": 16
+          },
+          "point": [
+            879,
+            212
+          ],
+          "sharedNode": "worker"
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "client-api",
+            "from": "clients",
+            "to": "api",
+            "label": "直接 REST /api/v1",
+            "collectionIndex": 0,
+            "artifactIndex": 1
+          },
+          "bends": 3,
+          "stretch": 1.316
+        },
+        {
+          "relationship": {
+            "id": "demo-contracts",
+            "from": "demo",
+            "to": "contracts",
+            "label": "EventSimIR.validate",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "bends": 3,
+          "stretch": 1.229
+        },
+        {
+          "relationship": {
+            "id": "routes-persistence",
+            "from": "routes",
+            "to": "persistence",
+            "label": "Project／Experiment CRUD",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "bends": 4,
+          "stretch": 1.558,
+          "directCorridorBlockers": [
+            {
+              "id": "demo",
+              "label": "Demo Model",
+              "box": [
+                500,
+                500,
+                190,
+                84
+              ]
+            }
+          ]
+        },
+        {
+          "relationship": {
+            "id": "worker-contracts",
+            "from": "worker",
+            "to": "contracts",
+            "label": "validate model／dump result",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "bends": 4,
+          "stretch": 1.722
+        },
+        {
+          "relationship": {
+            "id": "worker-persistence",
+            "from": "worker",
+            "to": "persistence",
+            "label": "讀取與寫回 Experiment",
+            "collectionIndex": 15,
+            "artifactIndex": 16
+          },
+          "bends": 5,
+          "stretch": 1.311
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "api → routes crosses worker → persistence: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "routes → demo and routes → persistence cross next to routes: move node demo or persistence so the two reach routes from different sides (for example one level with it, one directly above or below it).",
+      "engine → contracts and worker → contracts cross next to contracts: move node engine or worker so the two reach contracts from different sides (for example one level with it, one directly above or below it).",
+      "routes → redis crosses worker → persistence: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "worker → engine and worker → persistence cross next to worker: move node engine or persistence so the two reach worker from different sides (for example one level with it, one directly above or below it).",
+      "worker → contracts and worker → persistence cross next to worker: move node contracts or persistence so the two reach worker from different sides (for example one level with it, one directly above or below it).",
+      "clients → api needs 3 bends: move node clients or api so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "demo → contracts needs 3 bends: move node demo or contracts so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

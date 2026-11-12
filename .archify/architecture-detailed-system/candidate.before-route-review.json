@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "tpiA Backend 詳細系統架構",
+    "locale": "zh-TW",
+    "output": ".archify/architecture-detailed-system-20261112-180049/architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/TPIAAAA/tpiA_backend.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "90c44c442aa870f0e46d12f8c2d2230dc8a02a36"
+    }
+  },
+  "components": [
+    {
+      "id": "clients",
+      "type": "external",
+      "label": "前端與 API 用戶端",
+      "sublabel": "獨立前端／curl／Swagger UI",
+      "pos": [40, 300],
+      "size": [164, 78],
+      "sources": [
+        { "path": "README.md", "line": 33, "end_line": 57, "label": "目前 API 能力" },
+        { "path": "README.md", "line": 202, "end_line": 207, "label": "外部存取邊界" }
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "cloud",
+      "label": "digiRunner Gateway",
+      "sublabel": "選用 REST proxy／不自動註冊",
+      "tag": "gateway profile",
+      "pos": [240, 70],
+      "size": [186, 82],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 59, "end_line": 66, "label": "選用 Gateway container" },
+        { "path": "README.md", "line": 226, "end_line": 242, "label": "Gateway 驗收狀態" }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI／Uvicorn API",
+      "sublabel": "lifespan init_db／CORS／/api/v1",
+      "tag": "container :8000",
+      "pos": [240, 300],
+      "size": [190, 88],
+      "sources": [
+        { "path": "Dockerfile", "line": 1, "end_line": 7, "label": "API image 與入口" },
+        { "path": "docker-compose.yml", "line": 34, "end_line": 48, "label": "API service" },
+        { "path": "app/main.py", "line": 9, "end_line": 18, "label": "FastAPI application" }
+      ]
+    },
+    {
+      "id": "redis",
+      "type": "messagebus",
+      "label": "Redis 7",
+      "sublabel": "Celery broker／result backend",
+      "pos": [500, 70],
+      "size": [176, 78],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 26, "end_line": 33, "label": "Redis service" },
+        { "path": "docker-compose.yml", "line": 37, "end_line": 40, "label": "Broker／backend URLs" },
+        { "path": "app/workers/celery_app.py", "line": 1, "end_line": 6, "label": "Celery configuration" }
+      ]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "Celery Worker",
+      "sublabel": "run_experiment task process",
+      "tag": "shared backend image",
+      "pos": [780, 70],
+      "size": [184, 82],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 49, "end_line": 58, "label": "Worker service" },
+        { "path": "app/workers/tasks.py", "line": 7, "end_line": 24, "label": "Experiment task" }
+      ]
+    },
+    {
+      "id": "routes",
+      "type": "backend",
+      "label": "API Routes",
+      "sublabel": "health／projects／demo／experiments",
+      "pos": [500, 300],
+      "size": [190, 88],
+      "sources": [
+        { "path": "app/api/routes.py", "line": 12, "end_line": 32, "label": "Health／model／sync run" },
+        { "path": "app/api/routes.py", "line": 35, "end_line": 72, "label": "Project／experiment APIs" }
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "WorldEngine",
+      "sublabel": "heapq DES／活動依賴／資源容量",
+      "tag": "無 Agent runtime",
+      "pos": [780, 300],
+      "size": [190, 88],
+      "sources": [
+        { "path": "app/simulation/engine.py", "line": 16, "end_line": 55, "label": "模擬主迴圈" },
+        { "path": "app/simulation/engine.py", "line": 57, "end_line": 81, "label": "事件與資源規則" }
+      ]
+    },
+    {
+      "id": "mysql",
+      "type": "database",
+      "label": "MySQL 8.4",
+      "sublabel": "projects／experiments／JSON 結果",
+      "tag": "mysql_data volume",
+      "pos": [500, 900],
+      "size": [184, 88],
+      "sources": [
+        { "path": "docker-compose.yml", "line": 3, "end_line": 25, "label": "MySQL service 與 volume" },
+        { "path": "app/db.py", "line": 20, "end_line": 34, "label": "Project／Experiment tables" }
+      ]
+    },
+    {
+      "id": "demo",
+      "type": "backend",
+      "label": "Demo Model",
+      "sublabel": "4 activities／3 resources／Agent metadata",
+      "pos": [500, 500],
+      "size": [190, 84],
+      "sources": [
+        { "path": "app/simulation/examples.py", "line": 4, "end_line": 25, "label": "校園活動 demo IR" }
+      ]
+    },
+    {
+      "id": "contracts",
+      "type": "external",
+      "label": "Pydantic Contracts",
+      "sublabel": "EventSimIR／Agent／EventLog／Result",
+      "tag": "shared by API + Worker",
+      "pos": [780, 500],
+      "size": [204, 88],
+      "sources": [
+        { "path": "app/contracts/schemas.py", "line": 7, "end_line": 61, "label": "IR 與 validator" },
+        { "path": "app/contracts/schemas.py", "line": 64, "end_line": 119, "label": "Agent／EventLog／Result" },
+        { "path": "app/contracts/schemas.py", "line": 122, "end_line": 136, "label": "API request／response" }
+      ]
+    },
+    {
+      "id": "persistence",
+      "type": "database",
+      "label": "SQLAlchemy Persistence",
+      "sublabel": "Engine／SessionLocal／create_all",
+      "tag": "尚無 Alembic",
+      "pos": [500, 700],
+      "size": [190, 88],
+      "sources": [
+        { "path": "app/db.py", "line": 4, "end_line": 13, "label": "Engine 與 Session" },
+        { "path": "app/db.py", "line": 37, "end_line": 43, "label": "init_db／get_db" }
+      ]
+    },
+    {
+      "id": "ci",
+      "type": "external",
+      "label": "GitHub Actions／pytest",
+      "sublabel": "SQLite unit＋MySQL 8.4 integration",
+      "pos": [40, 1120],
+      "size": [190, 86],
+      "sources": [
+        { "path": ".github/workflows/ci.yml", "line": 1, "end_line": 15, "label": "Unit test job" },
+        { "path": ".github/workflows/ci.yml", "line": 16, "end_line": 40, "label": "MySQL integration job" }
+      ]
+    },
+    {
+      "id": "doccompiler",
+      "type": "backend",
+      "label": "Document＋Compiler",
+      "sublabel": "EvidenceSpan／Parser／EventSimIR compile",
+      "tag": "NotImplemented",
+      "pos": [240, 1100],
+      "size": [198, 88],
+      "sources": [
+        { "path": "app/documents/parser.py", "line": 4, "end_line": 20, "label": "Evidence 與 parser TODO" },
+        { "path": "app/compiler/compiler.py", "line": 1, "end_line": 8, "label": "Compiler TODO" }
+      ]
+    },
+    {
+      "id": "agents",
+      "type": "backend",
+      "label": "Agent Layer",
+      "sublabel": "Policy／Population／Action Validator",
+      "tag": "未接入 WorldEngine",
+      "pos": [500, 1100],
+      "size": [192, 88],
+      "sources": [
+        { "path": "app/agents/base.py", "line": 6, "end_line": 15, "label": "Policy／NoOp" },
+        { "path": "app/agents/population.py", "line": 4, "end_line": 7, "label": "Population TODO" },
+        { "path": "app/simulation/action_validator.py", "line": 4, "end_line": 10, "label": "Validator 未接入" }
+      ]
+    },
+    {
+      "id": "llm",
+      "type": "backend",
+      "label": "LLM Adapter",
+      "sublabel": "StructuredLLM Protocol／provider 未接",
+      "tag": "NotImplemented",
+      "pos": [240, 1280],
+      "size": [190, 88],
+      "sources": [
+        { "path": "app/llm/adapter.py", "line": 1, "end_line": 13, "label": "LLM adapter TODO" }
+      ]
+    },
+    {
+      "id": "analysis",
+      "type": "backend",
+      "label": "Scenario／Risk／Optimization",
+      "sublabel": "候選資料結構與研究接口",
+      "tag": "NotImplemented",
+      "pos": [500, 1280],
+      "size": [218, 88],
+      "sources": [
+        { "path": "app/experiments/scenarios.py", "line": 1, "end_line": 14, "label": "Scenario TODO" },
+        { "path": "app/risks/analyzer.py", "line": 1, "end_line": 14, "label": "Risk TODO" },
+        { "path": "app/optimization/optimizer.py", "line": 1, "end_line": 12, "label": "Optimization TODO" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "目前 Docker／API／同步與非同步執行範圍",
+      "wraps": ["gateway", "api", "redis", "worker", "routes", "engine", "mysql", "demo", "contracts", "persistence"]
+    },
+    {
+      "kind": "region",
+      "label": "研究擴充模組（尚未接入 runtime）",
+      "wraps": ["doccompiler", "agents", "llm", "analysis"]
+    }
+  ],
+  "connections": [
+    { "id": "client-api", "from": "clients", "to": "api", "label": "直接 REST /api/v1", "variant": "emphasis" },
+    { "id": "client-gateway", "from": "clients", "to": "gateway", "label": "選用代理入口", "variant": "dashed" },
+    { "id": "gateway-api", "from": "gateway", "to": "api", "label": "手動註冊 Proxy", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
+    { "id": "api-routes", "from": "api", "to": "routes", "label": "dispatch /api/v1", "variant": "emphasis" },
+    { "id": "routes-demo", "from": "routes", "to": "demo", "label": "demo_model" },
+    { "id": "demo-contracts", "from": "demo", "to": "contracts", "label": "EventSimIR.validate" },
+    { "id": "routes-contracts", "from": "routes", "to": "contracts", "label": "validate request／shape response" },
+    { "id": "routes-engine", "from": "routes", "to": "engine", "label": "同步 demo run", "variant": "emphasis" },
+    { "id": "engine-contracts", "from": "engine", "to": "contracts", "label": "consume IR／emit Result" },
+    { "id": "routes-persistence", "from": "routes", "to": "persistence", "label": "Project／Experiment CRUD", "fromSide": "bottom", "toSide": "top" },
+    { "id": "persistence-mysql", "from": "persistence", "to": "mysql", "label": "SQL／JSON", "fromSide": "bottom", "toSide": "top" },
+    { "id": "routes-redis", "from": "routes", "to": "redis", "label": "run_experiment.delay", "variant": "dashed" },
+    { "id": "redis-worker", "from": "redis", "to": "worker", "label": "Celery task", "variant": "dashed" },
+    { "id": "worker-engine", "from": "worker", "to": "engine", "label": "非同步 run", "fromSide": "bottom", "toSide": "top" },
+    { "id": "worker-contracts", "from": "worker", "to": "contracts", "label": "validate model／dump result" },
+    { "id": "worker-persistence", "from": "worker", "to": "persistence", "label": "讀取與寫回 Experiment", "fromSide": "right", "toSide": "top" },
+    { "id": "doccompiler-contracts", "from": "doccompiler", "to": "contracts", "label": "未來 compile to IR" },
+    { "id": "agents-contracts", "from": "agents", "to": "contracts", "label": "Agent contracts／尚未執行" },
+    { "id": "analysis-contracts", "from": "analysis", "to": "contracts", "label": "Risk uses SimulationResult" },
+    { "id": "ci-api", "from": "ci", "to": "api", "label": "pytest／TestClient", "variant": "dashed" },
+    { "id": "ci-mysql", "from": "ci", "to": "mysql", "label": "MySQL 8.4 integration", "variant": "dashed" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "同步路徑",
+      "items": [
+        "Client 可直連 API，或經手動設定的 digiRunner Proxy",
+        "Routes 取得 demo model，直接呼叫 WorldEngine",
+        "WorldEngine 只模擬活動依賴與資源容量"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "非同步路徑",
+      "items": [
+        "Routes 先寫入 Experiment，再透過 Redis 排入 Celery",
+        "Worker 驗證 EventSimIR、執行同一 WorldEngine",
+        "狀態與結果經 SQLAlchemy 寫回 MySQL"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "尚未接入",
+      "items": [
+        "Document／Compiler、Agent、LLM、Scenario／Risk／Optimization 仍是擴充骨架",
+        "沒有 Auth／RBAC、Alembic、Object Storage、事件重播或風險報告",
+        "digiRunner container 存在，但 Proxy 與治理功能尚未驗收"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1461 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-12T10:09:23.893Z",
+  "specification": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+    "sha256": "54429cf6de7ba224e6c8e21ca5e8f84deda4c549467f20ff6b46959d9781cfec",
+    "bytes": 9724
+  },
+  "artifact": {
+    "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+    "sha256": "4b78d175f9acc27306bc621d3e2bc56d996785fcdb17530ae34bb879e44a84c4",
+    "bytes": 876221
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\GitHub\\tpiA_backend\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\GitHub\\tpiA_backend",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "54429cf6de7ba224e6c8e21ca5e8f84deda4c549467f20ff6b46959d9781cfec",
+          "bytes": 9724
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 840,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\GitHub\\tpiA_backend\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\GitHub\\tpiA_backend",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "73e40e9d-d3d0-42a6-99ea-0a30d08b48bc",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\candidate.json",
+        "output": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "specification": {
+          "sha256": "54429cf6de7ba224e6c8e21ca5e8f84deda4c549467f20ff6b46959d9781cfec",
+          "bytes": 9724
+        },
+        "artifact": {
+          "sha256": "4b78d175f9acc27306bc621d3e2bc56d996785fcdb17530ae34bb879e44a84c4",
+          "bytes": 876221
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/TPIAAAA/tpiA_backend",
+          "revision": "90c44c442aa870f0e46d12f8c2d2230dc8a02a36",
+          "references": 26
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 201,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\GitHub\\tpiA_backend\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "artifact": {
+          "sha256": "4b78d175f9acc27306bc621d3e2bc56d996785fcdb17530ae34bb879e44a84c4",
+          "bytes": 876221
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 13,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 5,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.032019704433497,
+            "maxBends": 5,
+            "routesOverSuggestedBends": 9,
+            "maxStretch": 1.656,
+            "routesOverSuggestedStretch": 2,
+            "minSegmentPx": 24,
+            "minInteriorSegmentPx": 42,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [
+              {
+                "left": {
+                  "id": "main-db",
+                  "from": "main",
+                  "to": "db",
+                  "label": "lifespan init_db",
+                  "collectionIndex": 2,
+                  "artifactIndex": 3
+                },
+                "right": {
+                  "id": "routes-examples",
+                  "from": "routes",
+                  "to": "examples",
+                  "label": "demo_model",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "point": [
+                  497,
+                  226
+                ]
+              },
+              {
+                "left": {
+                  "id": "main-db",
+                  "from": "main",
+                  "to": "db",
+                  "label": "lifespan init_db",
+                  "collectionIndex": 2,
+                  "artifactIndex": 3
+                },
+                "right": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "point": [
+                  480.00000000000006,
+                  226
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-db",
+                  "from": "routes",
+                  "to": "db",
+                  "label": "Session／CRUD",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "routes-tasks",
+                  "from": "routes",
+                  "to": "tasks",
+                  "label": "run_experiment.delay",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "point": [
+                  476,
+                  314.72727272727275
+                ],
+                "sharedNode": "routes"
+              },
+              {
+                "left": {
+                  "id": "routes-examples",
+                  "from": "routes",
+                  "to": "examples",
+                  "label": "demo_model",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "right": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "point": [
+                  480.00000000000006,
+                  272.00000000000006
+                ],
+                "sharedNode": "routes"
+              },
+              {
+                "left": {
+                  "id": "routes-examples",
+                  "from": "routes",
+                  "to": "examples",
+                  "label": "demo_model",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "right": {
+                  "id": "db-config",
+                  "from": "db",
+                  "to": "config",
+                  "label": "DATABASE_URL",
+                  "collectionIndex": 8,
+                  "artifactIndex": 9
+                },
+                "point": [
+                  595,
+                  162
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "right": {
+                  "id": "db-config",
+                  "from": "db",
+                  "to": "config",
+                  "label": "DATABASE_URL",
+                  "collectionIndex": 8,
+                  "artifactIndex": 9
+                },
+                "point": [
+                  595,
+                  180.5
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "right": {
+                  "id": "examples-contracts",
+                  "from": "examples",
+                  "to": "contracts",
+                  "label": "EventSimIR.validate",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "point": [
+                  818,
+                  181.72222222222223
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "right": {
+                  "id": "tasks-db",
+                  "from": "tasks",
+                  "to": "db",
+                  "label": "read／write Experiment",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "point": [
+                  821,
+                  234
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-tasks",
+                  "from": "routes",
+                  "to": "tasks",
+                  "label": "run_experiment.delay",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "right": {
+                  "id": "examples-contracts",
+                  "from": "examples",
+                  "to": "contracts",
+                  "label": "EventSimIR.validate",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "point": [
+                  824,
+                  437
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-tasks",
+                  "from": "routes",
+                  "to": "tasks",
+                  "label": "run_experiment.delay",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "right": {
+                  "id": "engine-contracts",
+                  "from": "engine",
+                  "to": "contracts",
+                  "label": "IR／EventLog／Result",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  838.0000000000001,
+                  437
+                ]
+              },
+              {
+                "left": {
+                  "id": "routes-tasks",
+                  "from": "routes",
+                  "to": "tasks",
+                  "label": "run_experiment.delay",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "right": {
+                  "id": "tasks-contracts",
+                  "from": "tasks",
+                  "to": "contracts",
+                  "label": "validate model／dump result",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "point": [
+                  966,
+                  360.0000000000002
+                ],
+                "sharedNode": "tasks"
+              },
+              {
+                "left": {
+                  "id": "examples-contracts",
+                  "from": "examples",
+                  "to": "contracts",
+                  "label": "EventSimIR.validate",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "right": {
+                  "id": "tasks-db",
+                  "from": "tasks",
+                  "to": "db",
+                  "label": "read／write Experiment",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "point": [
+                  818,
+                  234
+                ]
+              },
+              {
+                "left": {
+                  "id": "tasks-db",
+                  "from": "tasks",
+                  "to": "db",
+                  "label": "read／write Experiment",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "right": {
+                  "id": "tasks-engine",
+                  "from": "tasks",
+                  "to": "engine",
+                  "label": "非同步 WorldEngine.run",
+                  "collectionIndex": 15,
+                  "artifactIndex": 16
+                },
+                "point": [
+                  945.9333333333333,
+                  286
+                ],
+                "sharedNode": "tasks"
+              }
+            ],
+            "crowdedSides": [
+              {
+                "node": "routes",
+                "label": "app.api.routes",
+                "side": "right",
+                "relationships": 5,
+                "sidePx": 86,
+                "neededPx": 88
+              }
+            ],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "main-routes",
+                  "from": "main",
+                  "to": "routes",
+                  "label": "include_router",
+                  "collectionIndex": 0,
+                  "artifactIndex": 1
+                },
+                "bends": 3,
+                "stretch": 1.314
+              },
+              {
+                "relationship": {
+                  "id": "routes-db",
+                  "from": "routes",
+                  "to": "db",
+                  "label": "Session／CRUD",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "bends": 3,
+                "stretch": 1.293
+              },
+              {
+                "relationship": {
+                  "id": "routes-examples",
+                  "from": "routes",
+                  "to": "examples",
+                  "label": "demo_model",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "routes-engine",
+                  "from": "routes",
+                  "to": "engine",
+                  "label": "同步 WorldEngine.run",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "bends": 3,
+                "stretch": 1.336,
+                "directCorridorBlockers": [
+                  {
+                    "id": "db",
+                    "label": "app.db",
+                    "box": [
+                      500,
+                      250,
+                      190,
+                      86
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "routes-tasks",
+                  "from": "routes",
+                  "to": "tasks",
+                  "label": "run_experiment.delay",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "bends": 5,
+                "stretch": 1.328,
+                "directCorridorBlockers": [
+                  {
+                    "id": "db",
+                    "label": "app.db",
+                    "box": [
+                      500,
+                      250,
+                      190,
+                      86
+                    ]
+                  },
+                  {
+                    "id": "engine",
+                    "label": "app.simulation.engine",
+                    "box": [
+                      720,
+                      250,
+                      202,
+                      86
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "examples-contracts",
+                  "from": "examples",
+                  "to": "contracts",
+                  "label": "EventSimIR.validate",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "bends": 4,
+                "stretch": 1.656
+              },
+              {
+                "relationship": {
+                  "id": "celery-config",
+                  "from": "celery",
+                  "to": "config",
+                  "label": "broker／backend settings",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "bends": 4,
+                "stretch": 1.316,
+                "directCorridorBlockers": [
+                  {
+                    "id": "examples",
+                    "label": "app.simulation.examples",
+                    "box": [
+                      720,
+                      60,
+                      196,
+                      78
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "tasks-db",
+                  "from": "tasks",
+                  "to": "db",
+                  "label": "read／write Experiment",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "bends": 4,
+                "stretch": 1.39,
+                "directCorridorBlockers": [
+                  {
+                    "id": "engine",
+                    "label": "app.simulation.engine",
+                    "box": [
+                      720,
+                      250,
+                      202,
+                      86
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "tasks-engine",
+                  "from": "tasks",
+                  "to": "engine",
+                  "label": "非同步 WorldEngine.run",
+                  "collectionIndex": 15,
+                  "artifactIndex": 16
+                },
+                "bends": 3,
+                "stretch": 1.31
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 30,
+            "emptyTopRatio": 0.035,
+            "occupiedTop": 30,
+            "viewBoxTop": 0,
+            "canvasHeight": 866,
+            "typicalNodeHeight": 86,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "main"
+            },
+            "minimumSourceTextPx": 7.9,
+            "minimumProjectedTextPx": 6.032019704433497,
+            "semanticTextCount": 50
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "73e40e9d-d3d0-42a6-99ea-0a30d08b48bc"
+      }
+    },
+    "browser-check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 1958,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\GitHub\\tpiA_backend\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "pass",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "73e40e9d-d3d0-42a6-99ea-0a30d08b48bc",
+        "artifact": {
+          "path": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.html",
+          "sha256": "4b78d175f9acc27306bc621d3e2bc56d996785fcdb17530ae34bb879e44a84c4",
+          "bytes": 876221
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        },
+        "diagnostics": [],
+        "containment": {
+          "status": "pass",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 965,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1031,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1240,
+              "diagramWidth": 1210,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 860,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.848111658456486,
+              "minimumProjectedNonEdgeTextPx": 7.848111658456486,
+              "minimumProjectedEdgeTextPx": 7.947454844006568,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1572,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 1082,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.9,
+              "minimumProjectedNonEdgeTextPx": 7.9,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "themeStates": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            }
+          ]
+        },
+        "readability": {
+          "status": "pass",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 965,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1031,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1240,
+              "diagramWidth": 1210,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 860,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.848111658456486,
+              "minimumProjectedNonEdgeTextPx": 7.848111658456486,
+              "minimumProjectedEdgeTextPx": 7.947454844006568,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1572,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 1082,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.9,
+              "minimumProjectedNonEdgeTextPx": 7.9,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "viewerChrome": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 965,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1031,
+              "overflowX": false,
+              "overflowY": true,
+              "verticalScrollAccepted": true,
+              "overflowDisposition": "readable-vertical-scroll",
+              "readerLayout": "adaptive",
+              "readerOverflow": "authored",
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1187,
+              "diagramWidth": 1157,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 823,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.504351395730707,
+              "minimumProjectedNonEdgeTextPx": 7.504351395730707,
+              "minimumProjectedEdgeTextPx": 7.599343185550082,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1240,
+              "diagramWidth": 1210,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 860,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.848111658456486,
+              "minimumProjectedNonEdgeTextPx": 7.848111658456486,
+              "minimumProjectedEdgeTextPx": 7.947454844006568,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1572,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 1082,
+                "cardsPx": 0,
+                "viewBoxHeight": 866
+              },
+              "viewBoxWidth": 1218,
+              "minimumProjectedNodeTextPx": 7.9,
+              "minimumProjectedNonEdgeTextPx": 7.9,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "FastAPI 建立／lifespan／CORS／router",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "main"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "architecture.browser-check.json",
+          "files": []
+        }
+      }
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "diagnostics": [],
+  "evidence": {
+    "receipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.finalize.json",
+    "summaryReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\GitHub\\tpiA_backend\\.archify\\architecture-python-modules-20261112-180049\\architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "finishedAt": "2026-11-12T10:09:27.286Z",
+  "durationMs": 3393,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-12T08:25:39.672Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}
